@@ -8,14 +8,14 @@ load.data <- function(LRN) {
   cup98
 }
 
-myHis <- function(x){
+cup98.his <- function(x){
   hist(cup98[,x], main = NULL, xlab = x)
 }
 
 view.cup98 <- function(){
   layout(matrix(c(1,2), 1,2))
   idx.num <- which(sapply(cup98, is.numeric))
-  sapply(names(idx.num[4:5]), myHis)
+  sapply(names(idx.num[4:5]), cup98.his)
   layout(matrix(1))
 }
 
