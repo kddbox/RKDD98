@@ -27,3 +27,16 @@ varSet2 <- c(
   "PCOWNERS", "PEPSTRFL", "PETS", "RAMNTALL", "RECINHSE",
   "RFA_2A", "RFA_2F", "STATE", "TIMELAG"
 )
+
+nRec <- dim(cup98)[1]
+train.size <- round(nRec * 0.7)
+test.size  <- nRec - train.size
+# ctree par
+minSplit     <- 1000
+minBlucket   <- 400
+maxSurrogate <- 4
+maxDepth     <- 10
+
+strPar  <- paste(minSplit, minBlucket, maxSurrogate, maxDepth, sep = "-")
+loopNum <- 9
+cost    <- 0.68
